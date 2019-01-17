@@ -1,0 +1,38 @@
+{
+    "title": "Caribean Service Inmobiliaria",
+    "name": "website-caribean-service",
+    "version": "0.1.0",
+    "description": "Sitio web para la inmobiliaria Caribean Service en Cartagena",
+    "keywords": [
+        "Inmobiliarias en Cartagena",
+        "Venta de propiedades",
+        "real estate booker",
+        "corredor de bienes raíces",
+        "Arriendos de propiedades",
+        "Gestion de proyectos inmobiliarios"
+    ],
+    "homepage": "http://caribeanservice.com/index.html",
+    "bugs": {
+        "url": "https://github.com/SirJesu/Caribean2/issues",
+        "email": "lavelsoft@gmail.com"
+    },
+    "license": "MIT",
+    "author": "Lavel Soft",
+    "contributors": [
+        "Jesus Rodriguez",
+        "Manuel Angulo"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SirJesu/Caribean2.git"
+    },
+    "dependencies": {
+        "bootstrap": "4.1.1",
+        "jquery": "3.3.1",
+        "jquery.easing": "^1.4.1"
+    },
+    "devDependencies": {
+        "browser-sync": "2.24.5",
+        "gulp": "^3.9.1"
+    }
+}

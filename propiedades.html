@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es-ES">
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Nuestras Propiedades </title>
+
+    <meta name="author" content="Lavel Soft S.A.S">
+    <meta name="robots" content="Index, Follow">
+    <meta name="description" content="Somos una empresa que gira en torno a la gesti&oacute;n integral inmobiliaria, esforz&aacute;ndonos con ah&iacute;nco en satisfacer de manera personalizada las necesidades de nuestros clientes, mejorando as&iacute; su calidad de vida. Los asesoramos en adquirir casas, apartamentos y otros bienes en Cartagena de Indias.">
+    <meta name="Keywords" content="Inmobiliarias en Cartagena, Propiedades en Colombia Cartagena de Indias, casas, apartamentos, Hoteles en Cartagena, lotes y fincas para la venta y arriendo en Colombia Bol&iacute;var Cartagena de Indias">
+    <meta name="distribution" content="global">
+    <meta name="lenguage" content="Spanish">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+
+ <!-- favicons ================================================== -->
+      <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <!-- og tags -->
+    <meta property="og:description" content="Somos una empresa que gira en torno a la gesti&oacute;n integral inmobiliaria, esforz&aacute;ndonos con ah&iacute;nco en satisfacer de manera personalizada las necesidades de nuestros clientes, mejorando as&iacute; su calidad de vida. Los asesoramos en adquirir casas, apartamentos y otros bienes en Cartagena de Indias." />
+    <meta property="og:title" content="Inmobiliaria Venta y Arriendo de casas y apartamentos en Cartagena Colombia" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://caribeanservice.com"/>
+    <meta property="og:site_name" content="caribeanservice.com" />
+
+    <!-- og tags google+ -->
+    <meta itemprop="description" content="Somos una empresa que gira en torno a la gesti&oacute;n integral inmobiliaria, esforz&aacute;ndonos con ah&iacute;nco en satisfacer de manera personalizada las necesidades de nuestros clientes, mejorando as&iacute; su calidad de vida. Los asesoramos en adquirir casas, apartamentos y otros bienes en Cartagena de Indias.">
+
+    <!-- og tags twitter-->
+    <meta name="twitter:card" value="Somos una empresa que gira en torno a la gesti&oacute;n integral inmobiliaria, esforz&aacute;ndonos con ah&iacute;nco en satisfacer de manera personalizada las necesidades de nuestros clientes, mejorando as&iacute; su calidad de vida. Los asesoramos en adquirir casas, apartamentos y otros bienes en Cartagena de Indias.">
+
+    <!-- Verificacion de propiedad ================================================== -->
+    <meta name="google-site-verification" content="g_Iziw1sh-EPvzIGSD7WXo1HVm-BfehOxFPH2C6wy7I" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="css/footer-style.css" rel="stylesheet">
+
+    <!-- iconos -->
+    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+   
+    <link rel="manifest" href="vendor/manifest.json">
+    <link  rel="stylesheet" href="css/paginate/pagination.css" >
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script src="js/firebaseConfig.js" ></script>
+
+
+    <style>
+    hr{
+    margin: 5px;
+}
+
+    .propiedad_contenedor{
+      transition: 0.3s ease all;
+      max-width: 30%;
+      height: auto;
+      margin: 10px;
+      float: left;
+
+      border-radius: 5px;
+      color: #808B96;
+    }
+    .propiedad_contenedor a{
+      text-decoration: none;
+      color: #747474;
+    }
+    .propiedad_contenedor a:hover{
+      color: #f3a600;
+    }
+    .boton_vermas_propiedad{
+      transition: 0.3s all  ease;
+      background-color: transparent;
+      color: #004274;
+      font-size: 1.1rem;
+      height: 50px;
+      /*
+      background-color: #004274;
+      color: #fff;
+      */
+    }
+    .boton_vermas_propiedad:hover{
+      transition: 0.3s all  ease;
+      color: #f3a600;
+      /*
+      background-color: #f3a600;
+      */
+    }
+
+    @media (max-width: 992px){
+        .propiedad_contenedor{
+          transition: 0.3s;
+          max-width: 95%;
+          height: auto;
+        }
+        
+    }
+
+
+    body{
+      background-color: #eaeaea !important;
+    }
+    .card{
+      padding: 0px;
+      border-radius: 5px;
+    }
+
+    .card img{
+      border-radius: 5px 5px 0px 0px;
+    }
+
+    .contenido{
+      padding: 15px; 
+
+    }
+
+    .sitio_title_{
+      /*text-transform: lowercase;*/
+      text-align: justify-all;
+      font-weight: 400;
+      filter: opacity(90%);
+    }
+
+    .foo{
+      font-weight: 500;
+    }
+    .tiped{
+      font-size:13px;
+      margin-bottom: 0px;
+      color: #f3a600;
+    }   
+       </style>
+    
+       
+         
+
+
+  </head>
+
+  <body id="page-top" style="">
+
+
+   <nav class="navbar navbar-expand-lg fixed-top barra_nav shadow-sm" id="mainNav">
+      <div class="container">
+    
+        <a class="navbar-brand js-scroll-trigger lgo" href="#page-top">
+          <img src="img/logo_horizontal.svg" width="auto" height="42" alt="logo-caribean">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-align-justify"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link enlace active" href="index.html" >Inicio</a>
+            </li>
+
+            <li class="nav-item">
+               <a class="nav-link enlace " href="servicios.html">Servicios</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link enlace" href="propiedades.html" style="color: #f3a600">Propiedades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace" href="proyectos.html">Proyectos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link enlace" href="empresa.html">Empresa</a>
+            </li>
+            <form class="form-inline my-2 my-lg-0">
+                <a href="contacto.html" id="boton_contactar" class="btn btt boton_" role="button" data-toggle="tooltip" data-placement="bottom" title="Comunicate con nosotros" data-animation="true">Contactar</a>
+                <!--<button class="btn btn-outline-primary" type="button" style="border: 1px solid; border-radius: 0%;">Contactar</button>-->
+                <a href="publicar.html" id="boton_publicar" class="btn btt boton_" role="button" data-toggle="tooltip" data-placement="bottom" title="Comunicate con nosotros" data-animation="true">Publica tu inmueble</a>
+                <style>
+                  .btt{
+                    margin-left: 10px;
+                  }
+                </style>
+                
+              </form>
+
+          </ul>
+        </div>
+      </div> 
+    </nav>
+    <style type="text/css">
+    /*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+      .barra_nav{
+        background-color: #ffffff;
+        /*font-family: 'Roboto', sans-serif; */
+        color: #0074b2;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+
+      .nav-item{
+        padding: 8px;
+      }
+      
+      .barra_nav li a{
+        transition: 0.6s;
+        color: #004274;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 600; /*600*/
+      }
+      .barra_nav li a:hover{
+        transition: 0.6s;
+        color: #f3a600;
+        font-size: 15px;
+        margin-bottom: -5px;
+      }
+
+       .boton_{
+        transition: 0.3s;
+        color: #ffffff;
+        border-radius: 3px;
+
+
+      }
+      .boton_:hover{
+        transition: 0.3s;
+        
+        /*filter: brightness(95%);*/
+        
+
+      }
+
+
+      #boton_contactar{
+        background-color: #f3a600;
+      }
+
+      #boton_publicar{
+        background-color: #004274;
+      }
+
+    </style>
+    <br><br> <br><br>
+    <!--
+    <div class="jumbotron fondo" style="border-radius: 0px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-white">
+            <h3>Busca aquí tu inmueble!</h3>
+              
+
+               <div class="input-group">
+                <input type="text" class="form-control rounded" id="buscar" placeholder="Escribe palabras claves Ej: Arkadia...">
+
+                <div class="input-group-prepend" style="margin-left: 3px; ">
+                 <span class="input-group-text rounded" id="" style="background-color:  #f3a600; color: #fff;">
+                   <i class="fas fa-search"></i>
+                 </span>
+                 </div>
+                </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+        .fondo{
+          transition: 3s;
+          /*
+          background-image: url("https://images.adsttc.com/media/images/5942/d7da/b22e/3872/9900/000f/large_jpg/1.jpg?1497552851") !important;*/
+          background-color: #004274;
+          
+          
+          background-size: cover; 
+          background-repeat: no-repeat;
+          background-position: center; 
+        }
+        </style>-->
+
+      
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-3 float-left">
+
+                    <form>
+                      
+                    <div class="accordion shadow-sm" id="accordionExample">
+                      <div class="card">
+                        <div class="card-header" id="headingOne" style="background-color: #004274;">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="text-decoration: none; color: #fff; font-size: 16px;">
+                              Tipo de oferta <i class="fas fa-chevron-circle-down"></i>
+                            </button>
+                          </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                          <div class="card-body">
+                            <select  id="tipoOfertaSelect" class="form-control">
+                              <option value="-1">Todos</option>
+                              <option value="ventaArriendo" >Venta y Arriendo</option>
+                              <option value="ventas" >Ventas</option>
+                              <option value="arriendos" >Arriendos</option>
+                              <option value="proyectos" >Proyectos</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header" id="headingTwo" style="background-color: #004274;">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration: none; color: #fff; font-size: 16px;">
+                              Precio <i class="fas fa-chevron-circle-down"></i>
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                          <div class="card-body">
+                           <select  id="precioSelect" class="form-control">
+                              <option value="-1">Todos</option>
+                              <option value="0" >1,000,000 - 1,000,000,000</option>
+                              <option value="1">1,000,000 - 10,000,000</option>
+                              <option value="2">10,000,000 - 100,000,000</option>
+                              <option value="3">100,000,000 - 500,000,000</option>
+                              <option value="4">500,000,000 - 1,000,000,000</option>
+                              <option value="5">más de 1,000,000,000</option>
+                            </select>
+
+                            <!--
+                              solo visible y aplicable si se selecciona el tipo d enegocio como VENTA.
+
+                            <select  id="precioSelectventas" class="form-control">
+                              <option value="-1">Todos</option>
+                              <option value="0" >80.000.000 - 300,000,000,000</option>
+                              <option value="1">301,000,000 - 500,000,000</option>
+                              <option value="2">501,000,000 - 1,000,000,000</option>
+                              <option value="3">más de 1,000,000,000</option>
+                            </select>
+                                
+                              solo visible y a plicable si se selecciona el tipo de negocio como
+
+                            <select  id="precioSelectarriendos" class="form-control">
+                              <option value="-1">Todos</option>
+                              <option value="0" >1,000,000 - 1,000,000,000</option>
+                              <option value="1">1,000,000 - 10,000,000</option>
+                              <option value="2">10,000,000 - 100,000,000</option>
+                              <option value="3">100,000,000 - 500,000,000</option>
+                              <option value="4">500,000,000 - 1,000,000,000</option>
+                              <option value="5">más de 1,000,000,000</option>
+                            </select>
+
+  
+
+                            -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-header" id="headingThree_" style="background-color: #004274;">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree_" aria-expanded="false" aria-controls="collapseThree_" style="text-decoration: none; color: #fff; font-size: 16px;">
+                              Barrio <i class="fas fa-chevron-circle-down"></i>
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseThree_" class="collapse" aria-labelledby="headingThree_" data-parent="#accordionExample">
+                          <div class="card-body">
+                          <select id="barrioSelect"  class="form-control">
+                             
+                            <option value="-1" selected>Todos</option>
+                            
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="card">
+                        <div class="card-header" id="headingThree" style="background-color: #004274;">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="text-decoration: none; color: #fff; font-size: 16px;">
+                              Tipo de inmueble <i class="fas fa-chevron-circle-down"></i>
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                          <div class="card-body">
+                          <select id="tipoInmuebleSelect"  class="form-control">
+                             
+                            <option value="-1" selected>Todos</option>
+                            <option value="2">Apartamento</option>
+                            <option value="1">Casa</option>
+                            <option value="3">Local</option>
+                            <option value="4">Oficina</option>
+                            <option value="5">Lote</option>
+                            <option value="6">Edificio</option>
+                            <option value="8">Bodega</option>
+                            <option value="26">Parqueadero</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                     
+
+                  
+                      <div class="card">
+                        <div class="card-header" id="headingcinco" style="background-color: #004274;">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsecinco" aria-expanded="false" aria-controls="collapsecinco" style="text-decoration: none; color: #fff; font-size: 16px;">
+                              Habitaciones <i class="fas fa-chevron-circle-down"></i>
+                            </button> 
+                          </h5>
+                        </div>
+                        <div id="collapsecinco" class="collapse" aria-labelledby="headingcinco" data-parent="#accordionExample">
+                          <div class="card-body">
+                             <div class="btn-group mr-2" role="group" aria-label="First group">
+                              
+                              <button type="button" value="1" class="btn btn-outline-secondary btn-hab">1</button>
+                              <button type="button" value="2" class="btn btn-outline-secondary btn-hab">2</button>
+                              <button type="button" value="3" class="btn btn-outline-secondary btn-hab">3</button>
+                              <button type="button" value="4" class="btn btn-outline-secondary btn-hab">4+</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header" id="headingseis" style="background-color: #004274;">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseseis" aria-expanded="false" aria-controls="collapseseis" style="text-decoration: none; color: #fff; font-size: 16px;">
+                              Area M2 <i class="fas fa-chevron-circle-down"></i>
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseseis" class="collapse" aria-labelledby="headingseis" data-parent="#accordionExample">
+                          <div class="card-body">
+                            <div class="form-row">
+                            <input type="number" id="area1" class="form-control col" id="desde-area" placeholder="Desde" value="">
+                            <h2>-</h2>
+                            <input type="number" id="area2" class="form-control col" id="hasta_area" placeholder="Hasta" value="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header" id="headingsiete" style="background-color: #004274;">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsesiete" aria-expanded="false" aria-controls="collapsesiete" style="text-decoration: none; color: #fff; font-size: 16px;">
+                              Baños <i class="fas fa-chevron-circle-down"></i>
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapsesiete" class="collapse" aria-labelledby="headingsiete" data-parent="#accordionExample">
+                          <div class="card-body">
+                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                              <button id="btnBanos1"  type="button" value="1" class="btn btn-outline-secondary btn-ban">1</button>
+                              <button id="btnBanos2" type="button" value="2" class="btn btn-outline-secondary  btn-ban">2</button>
+                              <button id="btnBanos3" type="button" value="3" class="btn btn-outline-secondary  btn-ban">3</button>
+                              <button id="btnBanos4" type="button" value="4" class="btn btn-outline-secondary  btn-ban">4+</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-header" id="headingocho" style="background-color: #004274;">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseocho" aria-expanded="false" aria-controls="collapseocho" style="text-decoration: none; color: #fff; font-size: 16px;">
+                              Estrato <i class="fas fa-chevron-circle-down"></i>
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseocho" class="collapse" aria-labelledby="headingocho" data-parent="#accordionExample">
+                          <div class="card-body">
+                          <select id="estratoselect" class="form-control">
+                             
+                            <option value="-1" selected>Todos</option>
+                            <option value="0">1</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                            <option value="4">5</option>
+                            <option value="5">6</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                    <style type="text/css">
+                      .accordion .card{
+                        border:0px solid #fff;
+                      }
+                    </style>
+
+                    <br>
+                    <button type="button" id="btnAplicarFiltros"class="btn boton_ " style="background-color:  #f3a600; color: #fff;"> <i id="loadingFiltro" class="fas fa-sync fa-spin" ></i>  Aplicar filtros</button>
+                    </form>
+                    <br>
+                  </div>
+
+                  <div class="col-md-9 ">
+                      
+                      <nav class="Hgd">
+                        <form class="form-inline">
+                          <div class="contenedor">
+                             <input type="search" class="buscador"  name="buscar" id="buscarcodigo" placeholder="Coloque aquí su código wasi..." required alt="busca tu propiedad">
+                             <button class="btn-enviar"><i class="fas fa-search"></i></button>
+                          </div>
+                        </form>
+                      </nav>
+                      <style type="text/css">
+                        .Hgd{
+                            width: 98%;
+                        }
+                        .contenedor{
+                            transition: 0.3s ease all;
+                            width: 100%;
+                            padding: 15px;
+                            border-radius: 5px;
+                            background-color:#D6DBDF;
+                            color: #808B96;
+
+                            font-size:1.1em;
+                        }
+
+                        .contenedor:hover{
+                            transition: 0.3s ease all;
+                            font-size:1.2em;
+                        }
+
+                        form{
+                            transition: 0.3s ease all;
+                            margin: 10px;
+                        }
+
+                        form .contenedor input{
+                            border:0px solid;
+                            background-color: transparent !important;
+                            
+                        }
+
+                        form .contenedor input::placeholder{
+                            color: #808B96;
+                            font-style: italic;
+                        }
+
+                        #buscarcodigo{
+                            transition: 0.3s ease all;
+                            width: 87%; /*100%*/
+                            color:#808B96;
+                            
+                        }
+
+                        input:focus{
+                            transition: 0.3s ease all;
+                            outline: none;
+                        }
+
+                        .btn-enviar{
+                           transition: 0.3s ease all;
+                           float:right;
+                           z-index: 100;
+                           background-color: transparent;
+                           border:0px solid;
+                           color:#808B96;
+                           font-weight: 400;
+                        }
+                        @media screen and (max-width: 600px) {
+                            .Hgd{
+                            width: 100%;
+                            }
+                        }
+                      </style>
+
+
+                     <!--Elementos internos-->
+
+                        <br>
+                      <div class="col-12 col-md-12 col-sm-12">
+
+  <div id="contentContainer" class="row">
+                           
+       
+                                     
+ 
+                          </div>
+                          <div class="demo" id="demo" ></div>
+
+                      </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+
+
+
+    <!-- Footer -->
+
+    <br>
+    
+   <footer class="footer-distributed py-4" style="background-color: #004274;">
+      <br>
+      <div class="container">
+
+        <div class="footer-left">
+  
+          <h3><img src="img/logo_horizontal2.svg" width="auto" height="42" alt="logo-caribean"></h3>
+  
+          <p class="footer-links font-weight-normal">
+            <a href="index.html">Inicio</a>
+            -
+            <a href="servicios.html">Servicios</a>
+            -
+            <a href="propiedades.html">Propiedades</a>
+            -
+            <a href="proyectos.html">Proyectos</a>
+            -
+            <a href="empresa.html#page-top">Empresa</a>
+          </p>
+  
+          <p class="footer-company-name">Caribean Service &copy; 2018</p>
+
+          
+        </div>
+  
+        <div class="footer-center">
+
+            <div class="">
+                <i class="fa fa-map-marker" color="#8f9296"></i>
+                <p><a href="https://goo.gl/maps/exXixGQi9j62">Pie de la Popa - Callejón El Albercón <br> Cra. 21D #29B - 06 | Cartagena - Colombia</a></p>
+              </div>
+      
+              <div class="">
+                <i class="fas fa-phone" color="#8f9296" style="transform: rotate(90deg);"></i>
+                <p><a href="tel:+573012996773">(5) 656 50 72 | (5) 656 50 98 | 301 299 6773</a></p>
+              </div>
+      
+              <div class="">
+                <i class="fa fa-envelope" color="#8f9296"></i>
+                <p><a href="mailto:info@caribeanservice.com" style="color: #cfcfcf;">info@caribeanservice.com</a></p>
+              </div>
+
+
+                
+        </div>
+  
+        <div class="footer-right">
+  
+           <p class="footer-company-about">
+            <span style="color: #cfcfcf">Acerca de la Compañía</span>
+            Somos una empresa que gira en torno a la gestión integral en el sector inmobiliario y financiero, esforzándonos con ahínco en satisfacer las necesidades de nuestros clientes.
+          </p>
+  
+          <div class="footer-icons ">
+  
+            <a href="https://www.facebook.com/caribeanservice" target="_blank"><i class="fab fa-facebook-f social  _social_"></i></a>
+            <a href="https://twitter.com/@caribeanservice" target="_blank"><i class="fab fa-twitter social _social_"></i></a>
+            <a href="https://www.instagram.com/caribean_service_inmobiliaria/" target="_blank"><i class="fab fa-instagram social _social_"></i></a>
+            <a href="https://co.pinterest.com/caribeanservice/?sender=546272767209675757&invite_code=f6081ddb0314478480dd859ebfb93173" target="_blank"><i class="fab fa-pinterest-p social _social_"></i></a>
+            <a href="https://www.youtube.com/channel/UCHAQxJknOlS-Z3ORB0P8plQ" target="_blank"><i class="fab fa-youtube social _social_"></i></a>
+            <a href="mailto:info@caribeanservice.com"><i class="fas fa-envelope social"></i></a>
+           
+            <style>
+              .social:hover{
+                transition: 0.3s;
+                color: #eeeeee;
+
+              }
+              .social{
+                transition: 0.3s;
+                color: #ffffff;
+              }
+             
+            </style>
+
+          </div>
+  
+        </div>
+      </div>
+      </footer>
+
+    <div class="py-4" style="color: #e1e1e1; background-color: #00335a;">
+      <div class="container">
+          <footer class=""> 
+          <p class="text-center"> Web Site by <a class="" target="_blank" href="https://www.lavelsoft.com" style="color: #e1e1e1;"> Lavel Soft </a><span class="font-weight-light">Copyright &copy; 2018</span> </p>
+          </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js" ></script>
+    <script src="https://pagination.js.org/dist/2.1.4/pagination.js"   ></script>
+    <!-- Custom JavaScript for this theme 
+    <script src="js/scrolling-nav.js"></script>-->
+
+    <script>
+      var arriedosList = [];
+      var ResultstQery=[];
+      var btnBanos = null;
+      var btnHabitaciones = null;
+
+
+$(function () { 
+
+$.get("ContentChat.html",function (content) { 
+console.log(content);
+$("body").append(content);
+
+
+ });
+
+
+
+ });
+
+
+
+function FormatN(value) { 
+ return  new Intl.NumberFormat().format(value);
+
+ }
+
+
+function RawViewSlider(sitio,typeSite) {
+
+if(typeSite == "renta"){
+  console.log(sitio);
+
+var img = sitio.galleries[0]["0"];
+
+try{
+  img = sitio.galleries[0]["0"].url;
+}catch(error){
+img = "";
+
+}
+
+
+//onsole.log(img);
+
+var content =`
+
+
+  <div class="card shadow-sm propiedad_contenedor card col-sm-4 col-12 col-md-4">
+                      
+                        <img class="card-img-top propiedad_imagen" id="" src="`+img+`" alt="imagen de propiedad">
+                        <div class="contenido">
+                          <p class="tiped">Arriendo</p>
+                          <h5 class="card-title foo" id="">$ `+FormatN(sitio.rent_price)+` (`+sitio.iso_currency+`)</h5>
+                          <hr>
+                          <p class="card-text sitio_title_" id="">`+sitio.title+`</p>
+                          
+                        </div>
+                        <button id="btnVer`+sitio.id_property+`" value='`+sitio.id_property+`'  class="btn btn-sm boton_vermas_propiedad">
+                            Ver más
+                            </button>
+                        
+                     </div>
+
+                             
+
+`;
+
+$("#contentContainer").append(content);
+
+
+$("#btnVer"+sitio.id_property).click(function(evt){
+evt.preventDefault();
+
+var id = $(this).val();
+
+window.location = "vista_detalle.html?id="+id;
+
+
+});
+
+
+}else if(typeSite == "venta"){
+
+var img ="";
+
+try{
+  img = sitio.galleries[0]["0"].url;
+
+}catch(err){
+img == "";
+
+}
+
+//onsole.log(img);
+
+var content =`
+
+
+  <div class="card shadow-sm propiedad_contenedor card col-sm-4 col-12 col-md-4 ">
+                    
+                      <img class="card-img-top propiedad_imagen" id="" src="`+img+`" alt="">
+                      <div class="contenido">
+                        <p class="tiped">Venta</p>
+                        <h5 class="card-title" id="">$ `+FormatN(sitio.sale_price)+` (`+sitio.iso_currency+`)</h5>
+                        <hr>
+                        <p class="card-text" id="">`+sitio.title+`</p>
+                        
+                      </div>
+                      <button id="btnVer`+sitio.id_property+`" value='`+sitio.id_property+`'  class="btn btn-sm boton_vermas_propiedad">
+                            Ver más
+                          </button>
+                    
+                   </div>
+
+                                
+
+`;
+//$(".swiper-wrapper").empty();
+$("#contentContainer").append(content);
+
+$("#btnVer"+sitio.id_property).click(function(evt){
+evt.preventDefault();
+
+var id = $(this).val();
+
+window.location = "vista_detalle.html?id="+id;
+
+
+});
+
+
+
+}else if(typeSite == "mix"){
+
+
+var img ="";
+
+try{
+  img = sitio.galleries[0]["0"].url;
+
+}catch(err){
+img = "";
+
+}
+
+
+//onsole.log(img);
+
+var content =`
+
+ <div class="card shadow-sm propiedad_contenedor  card col-sm-4 col-12 col-md-4">
+                      
+                        <img class="card-img-top propiedad_imagen" id="" src="`+img+`" alt="imagen de propiedad">
+                        <div class="contenido">
+                          <p class="tiped">Venta</p>
+                          <h5 class="card-title" id="">$ `+FormatN(sitio.sale_price)+` (`+sitio.iso_currency+`) <hr>
+                          <p class="tiped">Arriendo</p>
+                           $ `+FormatN(sitio.rent_price)+` (`+sitio.iso_currency+`)</h5>
+                          <p class="card-text" id="">VENTA / `+sitio.title+`</p>
+                            
+                        </div>
+                        <button id="btnVer`+sitio.id_property+`" value='`+sitio.id_property+`'  class="btn btn-sm boton_vermas_propiedad">
+                            Ver más
+                            </button>
+                     </div>                 
+`;
+//$(".swiper-wrapper").empty();
+$("#contentContainer").append(content);
+
+$("#btnVer"+sitio.id_property).click(function(evt){
+evt.preventDefault();
+
+var id = $(this).val();
+
+window.location = "vista_detalle.html?id="+id;
+
+
+});
+
+
+
+
+} 
+
+
+
+
+  
+}
+
+
+        /**
+         * @param String name
+         * @return String
+         */
+         function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+
+
+
+
+        function RequestByType() { 
+
+          switch (getParameterByName("type")) {
+
+
+
+            case "ventas":
+
+$.ajax({
+  type: "post",
+  url: "Request/RequestController.php",
+  data: {total:getParameterByName("total"), 
+  Accion:"filtroVentas"
+},
+ dataType: "json"
+}).done(function (data) {
+  console.log(data[0]);
+ 
+ var obj = [];
+  for(var i =0;i<=99;i++){
+    obj.push(data[i]);
+
+
+};
+
+
+$('#demo').pagination({
+    dataSource:  obj,
+    pageSize: 6,
+    callback: function(data, pagination) {
+      $("#contentContainer").empty();
+      console.log(data);
+  data.forEach(element =>{
+    RawViewSlider(element,"venta");
+
+
+  });
+
+
+
+      
+      console.log(pagination);
+        // template method of yourself
+
+     //   var html = template(data);
+      //  dataContainer.html(html);
+    }
+});
+
+
+}).fail(function (error) {
+ console.log(error);
+  });
+
+
+              
+              break;
+              case "arriendo":
+
+$.ajax({
+  type: "post",
+  url: "Request/RequestController.php",
+  dataType:"json",
+  data: {total:getParameterByName("total"), 
+  Accion:"filtroArriendos"
+},
+
+}).done(function (data) {
+
+ var obj = [];
+  for(var i =0;i<=99;i++){
+    obj.push(data[i]);
+
+
+};
+
+
+$('#demo').pagination({
+    dataSource:  obj,
+    pageSize: 6,
+    callback: function(data, pagination) {
+      $("#contentContainer").empty();
+      console.log(data);
+  data.forEach(element =>{
+    console.log(element);
+    RawViewSlider(element,"renta");
+
+
+  });
+
+
+
+} });
+
+
+  
+
+
+ 
+
+}).fail(function (error) {
+  alert("Error");
+  });
+
+
+              
+              break;
+
+      case "all":
+      FiltrarAll("all");
+      
+      break;
+
+          
+            default:
+          
+            FiltrarAll("all");
+
+              break;
+          }
+
+
+
+
+
+
+
+         };
+
+
+         function ValidatePrice(price,filtro) {
+var status = false;
+//Precio
+switch (filtro.Precio) {
+ 
+  case "0":
+
+  if( price >= 1000000 && price <= 1000000000 ){
+status = true;
+ }else{
+
+  }
+    
+    break;
+
+    case "1":
+
+ if( price >= 1000000 && price <= 10000000 ){
+  status = true;
+}else{
+  
+}
+
+    
+    break;
+
+    case "2":
+
+     if( price >= 10000000 && price <= 100000000 ){
+      status = true;
+}else{
+  
+}
+    
+    break;
+
+    case "3":
+
+        if( price >= 100000000 && price <= 500000000 ){
+          status = true;
+}else{
+  
+}
+    
+    break;
+    
+    case "4":
+
+            if( price >= 500000000 && price <=  1000000000 ){
+              status = true;
+}else{
+  
+}
+    
+    break;
+    
+    
+    case "5":
+
+                if( price > 1000000000){
+                  status = true;
+}else{
+  
+}
+    
+    break;
+
+    case "-1":
+status =true;
+    break;
+
+    
+   
+    
+    
+    
+
+  default:
+    break;
+
+    return status;
+}
+
+
+
+//**Precio
+
+
+
+           
+         }
+        
+
+
+function ValidateOp(objValue,filtro) { 
+var status = false;
+console.log( parseInt( filtro.tipoInmueble ) + ":"+ parseInt( objValue.id_property_type )    );
+if( parseInt( filtro.tipoInmueble ) == parseInt( objValue.id_property_type )  || parseInt( filtro.tipoInmueble ) == -1  ){
+
+status = true;
+
+}
+if( parseInt( filtro.banos ) == parseInt(objValue.bathrooms) || parseInt(filtro.banos) >= parseInt( objValue.bathrooms ) ){
+  status == true;
+}
+
+if( parseInt( objValue.built_area  ) >= parseInt(filtro.area1) && parseInt( objValue.built_area ) <= parseInt(filtro.area2) ){
+  status == true;
+}
+if( filtro.Habitaciones == objValue.bedrooms ){
+  status  == true;
+}
+
+
+
+
+return status;
+
+
+ }
+
+
+
+        
+        $(function () {
+        
+  $("#loadingFiltro").hide();
+        
+    RequestByType();  
+    //VentasArriendo();  
+
+
+//Buton group baños
+$(".btn-ban").click(function (evt) {
+
+$(".btn-ban").removeClass("active");
+btnBanos = $(this).val();
+$(this).addClass("active");
+
+  });
+
+  //Button Group habitaciones
+  $(".btn-hab").click(function (evt) {
+
+$(".btn-hab").removeClass("active");
+btnHabitaciones = $(this).val();
+$(this).addClass("active");
+
+
+  });
+
+
+
+
+$("#btnAplicarFiltros").click(function (evt) {
+  $("#loadingFiltro").show();
+
+
+if(btnHabitaciones == null){
+
+btnHabitaciones = "3";
+
+}
+var area1 = $("#area1").val();
+if( area1 =="" ){
+area1 = "1";
+
+}
+var area2 = $("#area2").val();
+if( area2 == "" ){
+  area2 = "1000000";
+}
+
+
+if(btnBanos == null){
+
+  btnBanos = Math.floor((Math.random() * 4) + 1);;
+
+}
+
+
+  
+var filtrosResult = {
+  tipoOferta:$("#tipoOfertaSelect").val(),
+  Precio:$("#precioSelect").val(),
+  tipoInmueble:$("#tipoInmuebleSelect").val(),
+  Habitaciones:btnHabitaciones,
+ area1:area1,
+ area2:area2,
+ banos:btnBanos,
+
+
+};
+console.log(filtrosResult);
+
+
+
+switch (filtrosResult.tipoOferta) {
+  case "-1":
+     FiltrarAll(filtrosResult);
+    break;
+
+    case "ventaArriendo":
+    FiltrarVentasArriendos(filtrosResult);
+    
+    break;
+
+    case "ventas":
+    FiltrarVentas(filtrosResult);
+    
+    break;
+
+    case "arriendos":
+    FiltrarArreiendos(filtrosResult);
+    
+    break;
+
+    case "proyectos":
+    
+    break;
+
+  default:
+
+
+    break;
+}
+
+
+
+  });
+
+
+
+
+
+          });//Fin Jquery
+
+
+
+  function FiltrarArreiendos(filtro) {
+
+$.ajax({
+  type: "post",
+  url: "Request/RequestController.php",
+  data: {total:getParameterByName("total"), 
+  Accion:"filtroArriendos"
+},
+  dataType: "json"
+}).done(function (data) {
+  console.log(data[0]);
+ // $(".swiper-wrapper").empty();
+
+var obj = [];
+ 
+ for(var i =0;i<=99;i++){
+    var status = true;
+var value = data[i];
+
+
+
+if(ValidateOp(value,filtro)){
+//  RawViewSlider(data[i],"renta");
+console.log("coinicde");
+obj.push(data[i]);
+
+
+}else{
+  console.log("No coincide");
+}
+
+
+
+}
+console.log(obj);
+ 
+ $("#demo").empty();
+$('#demo').pagination({
+    dataSource:  obj,
+    pageSize: 6,
+    callback: function(data, pagination) {
+      $("#contentContainer").empty();
+      console.log(data);
+  data.forEach(element =>{
+    RawViewSlider(element,"renta");
+
+
+  })
+ }});
+
+
+ 
+
+}).fail(function (error) {
+  alert("Error");
+  });
+
+
+
+    
+  }
+  function FiltrarVentas(filtro) {
+   
+    $.ajax({
+  type: "post",
+  url: "Request/RequestController.php",
+  data: {total:getParameterByName("total"), 
+  Accion:"filtroVentas"
+},
+  dataType: "json"
+}).done(function (data) {
+ 
+var obj = [];
+
+ // $(".swiper-wrapper").empty();
+  for(var i =0;i<=99;i++){
+    var status = true;
+var value = data[i];
+
+console.log( ValidateOp(value,filtro) );
+
+if(ValidateOp(value,filtro)){
+ obj.push( data[i] ) ;
+  //RawViewSlider(data[i],"venta");
+
+
+}else{
+  console.log("No coincide");
+}
+
+}
+if(obj.length == 0){
+alert("Ningun dato coincide con los parametros de busqueda");
+
+}
+
+ $("#demo").empty();
+$('#demo').pagination({
+    dataSource:  obj,
+    pageSize: 6,
+    callback: function(data, pagination) {
+      $("#contentContainer").empty();
+      console.log(data);
+  data.forEach(element =>{
+    RawViewSlider(element,"venta");
+
+
+  }); 
+ }});
+
+
+
+
+}).fail(function (error) {
+  alert("Error");
+  });
+
+  }
+  function FiltrarVentasArriendos(filtro) {
+    
+
+  $.ajax({
+  type: "post",
+  url: "Request/RequestController.php",
+  data: {total:100, 
+  Accion:"filtroArriendosVentas"
+},
+  dataType: "json"
+}).done(function (data) {
+
+var obj = [];
+
+ $("#contentContainer").empty();
+  for(var i =0;i<=99;i++){
+    var status = true;
+
+//RawViewSlider(data[i],"mix");
+obj.push(data[i]);
+
+}
+
+ $("#demo").empty();
+$('#demo').pagination({
+    dataSource:  obj,
+    pageSize: 6,
+    callback: function(data, pagination) {
+      $("#contentContainer").empty();
+     
+  data.forEach(element =>{
+    RawViewSlider(element,"mix");
+
+
+  }); 
+ }});
+
+
+
+
+}).fail(function (error) {
+  alert("Error");
+  });
+
+
+  }
+  function FiltrarAll(filtro) {
+  
+
+  $.ajax({
+  type: "post",
+  url: "Request/RequestController.php",
+  data: {total:100, 
+  Accion:"FiltroAll"
+},
+  dataType: "json"
+}).done(function (data) {
+ var obj = [];
+ $("#contentContainer").empty();
+  for(var i =0;i<=80;i++){
+    var status = true;
+
+obj.push(data[i]);
+//RawViewSlider(data[i],"mix");
+
+}
+$("#demo").empty();
+console.log(obj);
+$('#demo').pagination({
+    dataSource:  obj,
+    pageSize: 6,
+    callback: function(data, pagination) {
+      $("#contentContainer").empty();
+      console.log(data);
+  data.forEach(element =>{
+    RawViewSlider(element,"mix");
+
+
+  }); 
+ }});
+
+
+
+
+}).fail(function (error) {
+  alert("Error");
+  });
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+          
+        </script>
+        
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Chat Virtual Asistencia | Caribean Service Inmobiliaria </title>
+
+    <meta name="author" content="Lavel Soft S.A.S">
+    <meta name="robots" content="Index, Follow">
+    <meta name="description" content="Somos una empresa que gira en torno a la gesti&oacute;n integral inmobiliaria, esforz&aacute;ndonos con ah&iacute;nco en satisfacer de manera personalizada las necesidades de nuestros clientes, mejorando as&iacute; su calidad de vida. Los asesoramos en adquirir casas, apartamentos y otros bienes en Cartagena de Indias.">
+    <meta name="Keywords" content="Inmobiliarias en Cartagena, Propiedades en Colombia Cartagena de Indias, casas, apartamentos, Hoteles en Cartagena, lotes y fincas para la venta y arriendo en Colombia Bol&iacute;var Cartagena de Indias">
+    <meta name="distribution" content="global">
+    <meta name="lenguage" content="Spanish">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+
+ <!-- favicons ================================================== -->
+      <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <!-- og tags -->
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://caribeanservice.com"/>
+    <meta property="og:site_name" content="caribeanservice.com" />
+
+    <!-- og tags google+ -->
+    
+
+    <!-- Verificacion de propiedad ================================================== -->
+    <meta name="google-site-verification" content="g_Iziw1sh-EPvzIGSD7WXo1HVm-BfehOxFPH2C6wy7I" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="css/footer-style.css" rel="stylesheet">
+    <link href="css/estilo-home.css" rel="stylesheet">
+
+    <!-- iconos -->
+    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      
+    <link rel="manifest" href="vendor/manifest.json">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script src="js/firebaseConfig.js" ></script>
+    
+    <style>
+    
+    div.fixedd {
+    transition: 0.6s;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;/*30%*/
+    height: 40px;
+    /*border: 2px solid white;*/
+    background: #c20000;
+
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+
+    border-radius: 5px 5px 0px 0px;
+
+    -webkit-box-shadow: -9px -9px 25px -7px rgba(0,0,0,0.28);
+    -moz-box-shadow: -9px -9px 25px -7px rgba(0,0,0,0.28);
+    box-shadow: -9px -9px 25px -7px rgba(0,0,0,0.28);
+    
+    }
+
+    .cardMesage {
+        /* Add shadows to create the "card" effect */
+        
+        transition: 0.3s;
+        background-color: #f5f5f5;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 5px;
+
+    }
+
+   
+
+    .card_conte{
+      margin:10px;
+      
+
+    }
+    .card_conte_{
+      margin:10px;
+      
+
+    }
+
+    #dataUsuario{
+      padding: 10px;
+    }
+
+    .mensajitos{
+
+    }
+
+    .cardMesage{
+      transition: 0.3s;
+      padding: 5px;
+
+    }
+
+    .cardMesage:hover{
+      transition: 0.3s;
+      border: 2px solid #009e23;
+    }
+
+    </style>
+  
+  </head>
+
+  <body id="page-top" style="background-color: #00335a">
+
+
+    <nav class="navbar navbar-expand-lg fixed-top barra_nav shadow-sm" id="mainNav">
+
+      <div class="container">
+    
+        <a class="navbar-brand js-scroll-trigger lgo" href="#page-top">
+          <img src="img/logo_horizontal.svg" width="auto" height="42" alt="logo-caribean">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-align-justify"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link enlace active" href="index.html">Inicio</a>
+            </li>
+
+            <li class="nav-item">
+               <a class="nav-link enlace " href="servicios.html">Servicios</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link enlace" href="propiedades.html">Propiedades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace" href="proyectos.html">Proyectos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link enlace" href="empresa.html">Empresa</a>
+            </li>
+
+            <form class="form-inline my-2 my-lg-0">
+                <a href="contacto.html" id="boton_contactar" class="btn btt boton_" role="button" data-toggle="tooltip" data-placement="bottom" title="Comunicate con nosotros" data-animation="true">Contactar</a>
+                <!--<button class="btn btn-outline-primary" type="button" style="border: 1px solid; border-radius: 0%;">Contactar</button>-->
+                <a href="publicar.html" id="boton_publicar" class="btn btt boton_" role="button" data-toggle="tooltip" data-placement="bottom" title="Comunicate con nosotros" data-animation="true">Publica tu inmueble</a>
+                <style>
+                  .btt{
+                    margin-left: 10px;
+                  }
+                </style>
+               
+              </form>
+
+          </ul>
+        </div>
+      </div> 
+    </nav>
+    <style type="text/css">
+    /*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+      .barra_nav{
+        background-color: #ffffff;
+        /*font-family: 'Roboto', sans-serif; */
+        color: #0074b2;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .nav-item{
+        padding: 8px;
+      }
+      
+      .barra_nav li a{
+        transition: 0.6s;
+        color: #004274;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 600; /*600*/
+      }
+      .barra_nav li a:hover{
+        transition: 0.6s;
+        color: #f3a600;
+        font-size: 15px;
+        margin-bottom: -5px;
+      }
+
+       .boton_{
+        transition: 0.3s;
+        color: #ffffff;
+        border-radius: 3px;
+      }
+      .boton_:hover{
+        transition: 0.3s;
+      }
+
+
+      #boton_contactar{
+        background-color: #f3a600;
+      }
+
+      #boton_publicar{
+        background-color: #004274;
+      }
+
+    </style>
+
+    <br>
+    <br><br>
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto shadow rounded" style="background-color: #fff">
+          <br>
+          <div class="text-truncate">
+            <h2><i class="far fa-comments"></i> Asistencia virtual</h2> 
+            <hr>
+          </div>
+
+          <div class="col-lg ">
+            <div class="" style="padding: 10px;">
+              <img src="img/user.png" alt="imagen_usuario" class="float-left">
+
+              
+              <label  id="exampleFormControlTextarea1" for="exampleFormControlTextarea1" style="margin-left: 10px;">Usuario</label>
+             
+
+              <span class="badge badge-success float-right" id="fecha_respuesta">02/11/2018 1:30 PM</span>
+            </div>
+          </div>
+
+          <div class="">
+            <form>
+              <div class="form-group">
+               
+                
+              </div>
+              <div class="border rounded"  id="bodyMesg"  style="width: 100%;height: 300px;overflow: scroll;overflow-x: hidden; background-color: #eaeaea; padding: 15px;">
+
+                </div>
+
+
+              
+              <div class="form-group">
+                <br>
+                <textarea class="form-control" id="campo_para_escribir" rows="3" placeholder="Escribe aquí la respuesta..."></textarea>
+              </div>
+            
+            
+
+   
+
+              <div class="form-group">
+                 <button type="button" class="btn mb-2 boton_ float-right" id="boton_enviar" style="background-color: #004274; color: #fff">Responder</button>
+              </div>
+             
+              
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+
+     <!-- Footer -->
+    
+     <footer class="footer-distributed py-4" style="background-color: #004274;">
+      <br>
+      <div class="container">
+
+        <div class="footer-left">
+  
+          <h3><img src="img/logo_horizontal2.svg" width="auto" height="42" alt="logo-caribean"></h3>
+  
+          <p class="footer-links font-weight-normal">
+            <a href="index.html">Inicio</a>
+            -
+            <a href="servicios.html">Servicios</a>
+            -
+            <a href="propiedades.html">Propiedades</a>
+            -
+            <a href="proyectos.html">Proyectos</a>
+            -
+            <a href="empresa.html#page-top">Empresa</a>
+          </p>
+  
+          <p class="footer-company-name">Caribean Service &copy; 2018</p>
+
+          
+        </div>
+  
+        <div class="footer-center">
+
+            <div class="">
+                <i class="fa fa-map-marker" color="#8f9296"></i>
+                <p><a href="https://goo.gl/maps/exXixGQi9j62">Pie de la Popa - Callejón El Albercón <br> Cra. 21D #29B - 06 | Cartagena - Colombia</a></p>
+              </div>
+      
+              <div class="">
+                <i class="fas fa-phone" color="#8f9296" style="transform: rotate(90deg);"></i>
+                <p><a href="tel:+573012996773">(5)656 50 72 | (5) 656 50 98 | 301 299 6773</a></p>
+              </div>
+      
+              <div class="">
+                <i class="fa fa-envelope" color="#8f9296"></i>
+                <p><a href="mailto:info@caribeanservice.com" style="color: #cfcfcf;">info@caribeanservice.com</a></p>
+              </div>
+      
+        </div>
+  
+        <div class="footer-right">
+  
+           <p class="footer-company-about">
+            <span style="color: #cfcfcf">Acerca de la Compañía</span>
+            Somos una empresa que gira en torno a la gestión integral en el sector inmobiliario y financiero, esforzándonos con ahínco en satisfacer las necesidades de nuestros clientes.
+          </p>
+  
+          <div class="footer-icons ">
+  
+            <a href="https://www.facebook.com/caribeanservice" target="_blank"><i class="fab fa-facebook-f social  _social_"></i></a>
+            <a href="https://twitter.com/@caribeanservice" target="_blank"><i class="fab fa-twitter social _social_"></i></a>
+            <a href="https://www.instagram.com/caribean_service_inmobiliaria/" target="_blank"><i class="fab fa-instagram social _social_"></i></a>
+            <a href="https://co.pinterest.com/caribeanservice/?sender=546272767209675757&invite_code=f6081ddb0314478480dd859ebfb93173" target="_blank"><i class="fab fa-pinterest-p social _social_"></i></a>
+            <a href="https://www.youtube.com/channel/UCHAQxJknOlS-Z3ORB0P8plQ" target="_blank"><i class="fab fa-youtube social _social_"></i></a>
+            <a href="mailto:info@caribeanservice.com"><i class="fas fa-envelope social"></i></a>
+           
+            <style>
+              .social:hover{
+                transition: 0.3s;
+                color: #eeeeee;
+
+              }
+              .social{
+                transition: 0.3s;
+                color: #ffffff;
+              }
+             
+            </style>
+
+          </div>
+  
+        </div>
+      </div>
+      </footer>
+
+    <div class="py-4" style="color: #e1e1e1; background-color: #00335a;">
+      <div class="container">
+          <footer class=""> 
+          <p class="text-center"> Web Site by <a class="" target="_blank" href="https://www.lavelsoft.com" style="color: #e1e1e1;"> Lavel Soft </a><span class="font-weight-light">Copyright &copy; 2018</span> </p>
+          </footer>
+        </div>
+    </div>
+      
+
+    <!-- Bootstrap core JavaScript -->
+  
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+     
+
+<script>
+
+
+  function dateFormat(){
+   
+   var fecha = new Date();
+
+   var dia = "";
+   var mes ="";
+   var anio = fecha.getFullYear();
+
+if(  fecha.getDate() <=9 ){
+dia ="0"+fecha.getDate();
+}else{
+ dia = ""+fecha.getDate();
+}
+if(  (fecha.getMonth()+1) <=9 ){
+ mes ="0"+(fecha.getMonth()+1);
+ }else{
+   mes =""+(fecha.getMonth()+1);
+ }
+
+var res = dia+"/"+mes+"/"+anio+" "+fecha.getHours()+":"+fecha.getMinutes()+":"+fecha.getSeconds();
+ 
+return res;
+ }
+
+ var db = firebase.database();
+
+  function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+
+$(function () { 
+
+$("#fecha_respuesta").text(dateFormat());
+
+ var tokenId = getParameterByName("token");
+
+db.ref("UsersMsg/"+tokenId).once("value",function (snapshot) {
+  
+var user = snapshot.val();
+$("#exampleFormControlTextarea1").text( user.nombre );
+ db.ref("Conversacion/"+tokenId).on("child_added",function (snapshot) {
+
+var msg = snapshot.val();
+console.log(msg);
+
+if(msg.type== "user"){
+
+var content = `
+<div class="cardMesage col-lg-6" style="border-left: 5px solid #009e23; background-color:#fff;" id='`+snapshot.key+`' >
+            <div class="card_conte">
+         <h5 style="width: 100%;margin-bottom: 5px"> <img src='img/user.png' >  `+user.nombre+`</h5>
+         <p style="color:#444444;"> `+msg.body+` </p>
+             </div>
+          </div>
+
+` ;
+
+$("#bodyMesg").append(content);
+
+
+$("#bodyMesg").animate({
+        scrollTop: $("#"+snapshot.key).offset().top
+    }, 2000);
+
+}else{
+
+var content = `
+<div class="row">
+<div class="cardMesage col-lg-6 offset-md-5" id='`+snapshot.key+`'  > 
+           <div class="card_conte_ ">
+         <h5 style="width: 100%;margin-bottom: 5px"> <img src='img/logo24.png'> Moderador</h5>
+         <p> `+msg.body+` </p>
+             </div>
+          </div>
+</div>
+` ;
+$("#bodyMesg").append(content);
+
+
+$("#bodyMesg").animate({
+        scrollTop: $("#"+snapshot.key).offset().top
+    }, 2000);
+
+}
+$("#currentsMessages").animate({
+        scrollTop: $("#"+snapshot.key).offset().top
+    }, 2000);
+
+
+
+
+ 
+ 
+ });
+
+
+$("#boton_enviar").click(function (evt) { 
+
+evt.preventDefault();
+var  boyd = $("#campo_para_escribir").val();
+
+ db.ref("Conversacion/"+tokenId).push().set({
+   body:boyd,
+   type:"moderador"
+
+
+ });
+
+ $("#campo_para_escribir").val("");
+
+
+ });
+
+
+
+
+});
+
+
+
+
+ });
+</script>
+
+  </body>
+
+</html>
+

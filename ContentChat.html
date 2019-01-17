@@ -1,0 +1,393 @@
+<style>
+
+    /*Estilo chat*/
+div.fixedd {
+    transition: 0.6s;
+    position: fixed;
+    bottom: 0;
+    right: 10px; /*0*/
+    width: 400px;/*30%*/
+    height: 40px;
+    /*border: 2px solid white;*/
+    background: #004274;
+
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+
+    border-radius: 5px 5px 0px 0px;
+
+    -webkit-box-shadow: -9px -9px 25px -7px rgba(0,0,0,0.28);
+    -moz-box-shadow: -9px -9px 25px -7px rgba(0,0,0,0.28);
+    box-shadow: -9px -9px 25px -7px rgba(0,0,0,0.28);
+    
+    }
+
+@media (max-width: 992px) {
+  div.fixedd{
+    transition: 0.3s;
+    width: 100%;
+    right: 0;
+  }
+}
+    .cardMesage {
+        /* Add shadows to create the "card" effect */
+        
+        transition: 0.3s;
+        background-color: #f5f5f5;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 5px;
+
+    }
+
+   
+
+    .card_conte{
+      margin:10px;
+      
+
+    }
+    .card_conte_{
+      margin:10px;
+      
+
+    }
+
+    #dataUsuario{
+      padding: 10px;
+    }
+
+    .mensajitos{
+
+    }
+
+    .cardMesage{
+      transition: 0.3s;
+      padding: 5px;
+
+    }
+
+    .cardMesage:hover{
+      transition: 0.3s;
+      border: 2px solid #009e23;
+    }
+
+</style>
+
+<div id="divFloated"  class="fixedd">
+
+                                      <div id="headerFloat" style="width: 100%; height: 40px;">
+
+                                        <button  id="close" class="btn btn-block btn-lg btn_apertura">
+                                           <i class="far fa-comments fa-lg"></i>   
+                                           Comunícate con Nosotros
+                                         </button>
+
+                                        <style type="text/css">
+                                         .btn_apertura{
+                                          background-color: transparent;
+                                          color: #fff;
+                                         }
+                                        </style>
+
+                                        
+                                       </div>
+
+                                       <p></p>
+                                   <div id="dataUsuario" style="width: 100%;background: white;height: 100%" >
+
+                                    <div class="card">
+                                      <div class="card-body">
+                                        <h5><i class="fas fa-user-circle"></i> Coloque sus datos para comenzar:</h5>
+                                        
+                                        <hr>
+                                        <form>
+                                          <div class="form-group">
+                                              <label>Nombre y Apellidos:</label>
+                                              <input type="text" id="nombreUsuario" class="form-control" placeholder="Su nombre completo" required>
+                                          </div>
+
+                                          <div class="form-group">
+                                              <label>Correo:</label>
+                                              <input type="email" id="correoUsuario" class="form-control" placeholder="ejemplo@correo.com" required>
+                                          </div>
+
+                                          <button value="001" id="btnEnviarSolicitudChatBgeain" type="button" class="btn boton_" style="background-color: #f3a600" >Empezar</button>
+
+                                        </form>
+                                      </div>
+                                    </div>
+                                    
+
+
+                                   </div>
+
+                                   <div id="chatbody" style="width: 100%;height: 100%;background: white" >
+
+                                      <div class="card" style="height: 80%;margin-bottom: 10%">
+
+                                          <div class="card-header">
+                                            <p><h4 id="nombreU"> Usuario </h4></p>
+                                          </div>
+                                          <div id="currentsMessages" class="card-body mensajitos" style="overflow: scroll;overflow-x: hidden" >
+
+                                            <div class="cardMesage" >
+                                              <h5 style="width: 100%;margin-bottom: 5px">Caribean Service</h5>
+                                              <p> Caribean te la bienvenida 
+                                               ¿En que podemos ayudarte? 
+                                              </p>
+                                            </div>
+                                          </div>
+
+                                          <div class="card-footer">
+
+                                          <div style="float: left;width: 70%">
+                                          <input type="text" id="inpuMesage" class="form-control" placeholder="Mensaje...">
+                                          </div>
+
+                                          <div style="float: right;width: 30%; padding-left: 5px;">
+                                          <button id="btnEnviarMensajeChat" class="btn btn_enviar">Enviar <i class="far fa-comment-dots"></i></button>
+                                          </div>
+
+                                          <style type="text/css">
+                                            .btn_enviar{
+                                              background-color: #004274;
+                                              color: #fff;
+                                            }
+                                          </style>
+
+                                          </div>
+                                          
+                                        </div>
+                                   </div>
+                             </div>
+
+<script>
+
+
+
+
+function random() {
+  return Math.random().toString(36).substr(2); // Eliminar `0.`
+};
+
+function token() {
+  return random() + random()+random(); // Para hacer el token más largo
+};
+
+
+
+
+$(function () {
+
+  
+  var datosUsuario = $("#dataUsuarioDiv");
+  var Chatbody  = $("#chatbody");
+  
+  Chatbody.hide();
+  
+  
+  
+  $(".btnAccion").click(function (evt) {
+  evt.preventDefault();
+  
+  var id = $(this).val();
+  window.location = "vista_detalle.html?id="+id;
+  
+  
+  
+  
+    });
+  
+  
+  
+  //Estado de la ventana flotante
+  var statefloated = false;
+  $("#headerFloat").click(function (evt) { 
+  
+  if(statefloated == false){
+  
+  $("#divFloated").css("height","80%"); //70%
+  statefloated = true;
+  
+  
+  
+  
+  }else{
+  
+  
+    $("#divFloated").css("height","40px"); 
+  statefloated = false;
+  
+  
+  }
+  
+  
+   });
+  
+   
+  
+    });
+  
+  console.log($("#btnEnviarSolicitudChatBgeain").val());
+  
+    $("#btnEnviarSolicitudChatBgeain").click(function (evt) {
+  evt.preventDefault();
+  
+  var datosU = {
+    nombre:$("#nombreUsuario").val(),
+    correo:$("#correoUsuario").val() 
+  }
+  
+  if(datosU.nombre == "" || datosU.correo == "" ){
+    alert("Los datos deben ser diligenciados");
+  
+  }else{
+    console.log(datosU);
+   $("#dataUsuario").hide();
+   $("#nombreU").text(datosU.nombre);
+    $("#chatbody").show();
+    InitChat(datosU);
+  
+  }
+  
+  
+  
+  
+  
+  });
+  
+  function InitChat(Usuario) {
+    var tokenId = token();
+   var db = firebase.database();
+   Usuario.token = tokenId;
+   EnviarSolicitudMsg(tokenId,Usuario.nombre,Usuario.correo);
+   db.ref("UsersMsg/"+tokenId).set(Usuario);
+  
+  
+   db.ref("Conversacion/"+tokenId).on("child_added",function (snapshot) {
+  
+  var msg = snapshot.val();
+  console.log(msg);
+  
+  if(msg.type== "user"){
+  
+  var content = `
+  <div class="cardMesage" id='`+snapshot.key+`' >
+           <h5 style="width: 100%;margin-bottom: 5px"> <img src='img/user.png' >  `+Usuario.nombre+`</h5>
+           <p> `+msg.body+` </p>
+  
+            </div>
+  
+  ` ;
+  
+  $("#currentsMessages").append(content);
+  
+  
+  $("#currentsMessages").animate({
+          scrollTop: $("#"+snapshot.key).offset().top
+      }, 2000);
+  
+  
+  }else{
+  
+  var content = `
+  <div class="cardMesage" id='`+snapshot.key+`'  >
+           <h5 style="width: 100%;margin-bottom: 5px"> <img src='img/logo24.png' >Consultor Servicio al cliente</h5>
+           <p> `+msg.body+` </p>
+  
+            </div>
+  
+  ` ;
+  
+  $("#currentsMessages").append(content);
+  
+  $("#currentsMessages").animate({
+          scrollTop: $("#"+snapshot.key).offset().top
+      }, 2000);
+  
+  
+  }
+  
+  
+  
+  
+  
+     
+   });
+  
+   $("#btnEnviarMensajeChat").click(function (evt) { 
+  evt.preventDefault();
+  
+  SendMessage(tokenId);
+  
+   });
+  
+  
+  
+  
+  
+  
+    }
+  
+  function SendMessage(tokenId) {
+  
+  
+   var db = firebase.database();
+  
+  var msg = {
+    type:"user",
+    time:new Date(),
+    body: $("#inpuMesage").val()
+  
+  }
+ 
+ if(   $("#inpuMesage").val() == "" ){
+
+ }else{
+  $("#inpuMesage").val("");
+  db.ref("Conversacion/"+tokenId).push().set(msg);
+  
+  
+
+ }
+
+  
+  
+  
+    }
+  
+  
+  
+  
+  function EnviarSolicitudMsg(token,nombre,correo) {
+  
+  $.ajax({
+   url:"Request/SendChat.php",
+   type:"post",
+   dataType:"json",
+   data:{
+    nombreU:nombre,
+    correoU:correo,
+    tokenChat:token
+  
+   }
+  
+  }).done(function (data) { 
+  
+  
+  
+   }).fail(function (error) {  
+  
+  
+  });
+  
+  
+    }
+  
+
+
+
+</script>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Nueva Inmueble para publicar | Caribean Service Inmobiliaria</title>
+
+    <meta name="author" content="Lavel Soft S.A.S">
+    <meta name="robots" content="Index, Follow">
+    <meta name="description" content="Somos una empresa que gira en torno a la gesti&oacute;n integral inmobiliaria, esforz&aacute;ndonos con ah&iacute;nco en satisfacer de manera personalizada las necesidades de nuestros clientes, mejorando as&iacute; su calidad de vida. Los asesoramos en adquirir casas, apartamentos y otros bienes en Cartagena de Indias.">
+    <meta name="Keywords" content="Inmobiliarias en Cartagena, Propiedades en Colombia Cartagena de Indias, casas, apartamentos, Hoteles en Cartagena, lotes y fincas para la venta y arriendo en Colombia Bol&iacute;var Cartagena de Indias">
+    <meta name="distribution" content="global">
+    <meta name="lenguage" content="Spanish">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+
+ <!-- favicons ================================================== -->
+      <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+   
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://caribeanservice.com"/>
+    <meta property="og:site_name" content="caribeanservice.com" />
+
+    <!-- Verificacion de propiedad ================================================== -->
+    <meta name="google-site-verification" content="g_Iziw1sh-EPvzIGSD7WXo1HVm-BfehOxFPH2C6wy7I" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="css/footer-style.css" rel="stylesheet">
+    <link href="css/estilo-home.css" rel="stylesheet">
+
+    <!-- iconos -->
+    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      
+    <link rel="manifest" href="vendor/manifest.json">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script src="js/firebaseConfig.js" ></script>
+    
+    <style>
+    
+    div.fixedd {
+    transition: 0.6s;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;/*30%*/
+    height: 40px;
+    /*border: 2px solid white;*/
+    background: #c20000;
+
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+
+    border-radius: 5px 5px 0px 0px;
+
+    -webkit-box-shadow: -9px -9px 25px -7px rgba(0,0,0,0.28);
+    -moz-box-shadow: -9px -9px 25px -7px rgba(0,0,0,0.28);
+    box-shadow: -9px -9px 25px -7px rgba(0,0,0,0.28);
+    
+    }
+
+    .cardMesage {
+        /* Add shadows to create the "card" effect */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    #dataUsuario{
+      padding: 10px;
+    }
+
+    .mensajitos{
+
+    }
+
+    .cardMesage{
+      padding: 5px;
+    }
+
+    </style>
+  
+  </head>
+
+  <body id="page-top">
+
+
+    <nav class="navbar navbar-expand-lg fixed-top barra_nav shadow-sm" id="mainNav">
+
+      <div class="container">
+    
+        <a class="navbar-brand js-scroll-trigger lgo" href="#page-top">
+          <img src="img/logo_horizontal.svg" width="auto" height="42" alt="logo-caribean">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-align-justify"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link enlace active" href="index.html">Inicio</a>
+            </li>
+
+            <li class="nav-item">
+               <a class="nav-link enlace " href="servicios.html">Servicios</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link enlace" href="propiedades.html">Propiedades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace" href="proyectos.html">Proyectos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link enlace" href="empresa.html">Empresa</a>
+            </li>
+
+            <form class="form-inline my-2 my-lg-0">
+                <a href="contacto.html" id="boton_contactar" class="btn btt boton_" role="button" data-toggle="tooltip" data-placement="bottom" title="Comunicate con nosotros" data-animation="true">Contactar</a>
+                <!--<button class="btn btn-outline-primary" type="button" style="border: 1px solid; border-radius: 0%;">Contactar</button>-->
+                <a href="publicar.html" id="boton_publicar" class="btn btt boton_" role="button" data-toggle="tooltip" data-placement="bottom" title="Comunicate con nosotros" data-animation="true">Publica tu inmueble</a>
+                <style>
+                  .btt{
+                    margin-left: 10px;
+                  }
+                </style>
+               
+              </form>
+
+          </ul>
+        </div>
+      </div> 
+    </nav>
+    <style type="text/css">
+    /*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+      .barra_nav{
+        background-color: #ffffff;
+        /*font-family: 'Roboto', sans-serif; */
+        color: #0074b2;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .nav-item{
+        padding: 8px;
+      }
+      
+      .barra_nav li a{
+        transition: 0.6s;
+        color: #004274;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 600; /*600*/
+      }
+      .barra_nav li a:hover{
+        transition: 0.6s;
+        color: #f3a600;
+        font-size: 15px;
+        margin-bottom: -5px;
+      }
+
+       .boton_{
+        transition: 0.3s;
+        color: #ffffff;
+        border-radius: 3px;
+      }
+      .boton_:hover{
+        transition: 0.3s;
+      }
+
+
+      #boton_contactar{
+        background-color: #f3a600;
+      }
+
+      #boton_publicar{
+        background-color: #004274;
+      }
+
+    </style>
+
+    <br>
+    <br><br><br>
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto shadow-sm">
+
+          <div>
+            <h1>Nueva publicación de inmueble</h1> 
+            <span class="badge badge-success" id="fecha_envio"></span>
+            <hr>
+          </div>
+
+          <div class="">
+
+
+            <table class="table table-hover table-striped">
+              <tbody>
+                <tr> 
+                  <td class="font-weight-bold">Tipo de Negocio:</td>
+                  <td id="tipo_negocio">Ventas</td>
+                </tr>
+                <tr>
+                  <td class="font-weight-bold">Nombre del propietario:</td>
+                  <td id="nombre_propietario">Jesus Rodriguez</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Direccion del propietario:</td>
+                  <td id="direccion_propietario">Manga AV Laceides de Segovia</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Telefono del propietario:</td>
+                  <td id="telefono_propietario">662548</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Celular del propietario:</td>
+                  <td id="celular_propietario">3126621680</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Correo del propietario:</td>
+                  <td id="correo_propietario">jdrgpersonal@gmail.com</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Estado del inmueble</td>
+                  <td id="estado_del_inmueble">Disponible</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Tipo de Inmueble:</td>
+                  <td id="tipo_inmueble">Apartamento</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Destinacion del inmueble:</td>
+                  <td id="destinacion_inmueble">Vivienda familiar</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Direccion del inmueble:</td>
+                  <td id="direccion_inmueble">Manga AV 3 gatos negros Cl 12</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Edificio:</td>
+                  <td id="edificio_inmueble">Edificio el Gatito</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Punto de referencia:</td>
+                  <td id="punto_referencia_inmueble">al frente de la señora en la silla</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Area del inmueble:</td>
+                  <td id="area_inmueble">30 <span>M2</span></td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Nombre del Administrador:</td>
+                  <td id="nombre_administrador">Pablo Castro</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Telefono del Administrador:</td>
+                  <td id="telefono_administrador">664578</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Estrato del inmueble:</td>
+                  <td id="estrato_inmueble">5</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Alcobas:</td>
+                  <td id="acobas">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">baños:</td>
+                  <td id="banos">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Sala:</td>
+                  <td id="sala">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Comedor:</td>
+                  <td id="comedor">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Cocina:</td>
+                  <td id="cocina">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Area de Labores:</td>
+                  <td id="area_labores">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Habitacion de servicio:</td>
+                  <td id="habitacion_servicio">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Baño de servicio:</td>
+                  <td id="bano_servicio">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Balcon:</td>
+                  <td id="balcon">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Patio:</td>
+                  <td id="patio">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Terraza:</td>
+                  <td id="terraza">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Estudio:</td>
+                  <td id="estudio">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Stars:</td>
+                  <td id="stars">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Mezanine:</td>
+                  <td id="mezanine">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Minisplit:</td>
+                  <td id="minisplit">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Citofono:</td>
+                  <td id="citofono">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Garaje:</td>
+                  <td id="garaje">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Otras amenidades:</td>
+                  <td id="otras_amenidades">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Ascensor:</td>
+                  <td id="ascensor">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Gimnasio:</td>
+                  <td id="gimnasio">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Sauna:</td>
+                  <td id="sauna">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Turco:</td>
+                  <td id="turco">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Zona de parques:</td>
+                  <td id="zona_parques">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Zona de juegos:</td>
+                  <td id="zona_juegos">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Porteria:</td>
+                  <td id="porteria">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Salon Social:</td>
+                  <td id="salon_social">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Piscina:</td>
+                  <td id="piscina">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Jacuzzi:</td>
+                  <td id="jacuzzi">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Tanque de reserva:</td>
+                  <td id="tanque_reserva">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">parqueadero de visitantes:</td>
+                  <td id="parqueadero_visitas">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Planta electrica:</td>
+                  <td id="planta_electrica">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">BBQ:</td>
+                  <td id="bbq">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Circuito Tv:</td>
+                  <td id="circuito_tv">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Otras amaneidades internas:</td>
+                  <td id="otras_amenidades_2">0</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Precio de Venta:</td>
+                  <td id="precio_venta"><span>$</span> 0.000.000 <span>(COP)</span></td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Precio negociable:</td>
+                  <td id="precio_negociable_venta">SI</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Nombre de Contacto para venta:</td>
+                  <td id="nombre_contacto_venta">Jesus Rodriguez </td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Telefono de contacto para venta:</td>
+                  <td id="telefono_contacto_venta">300000000</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Precio de arriendo:</td>
+                  <td id="precio_arriendo"><span>$</span>0.000.000 <span>(COP)</span></td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Precio negociable para arriendo:</td>
+                  <td id="precio_negociable_arriendo">NO</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Nombre de Contacto para arriendo:</td>
+                  <td id="nombre_contacto_arriendo">Jesus Rodriguez</td>
+                </tr>
+                <tr>
+                   <td class="font-weight-bold">Telefono de contacto para arriendo:</td>
+                  <td id="telefono_contacto_arriendo">300000000</td>
+                </tr>
+               
+
+
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+     <!-- Footer -->
+    
+     <footer class="footer-distributed py-4" style="background-color: #004274;">
+      <br>
+      <div class="container">
+
+        <div class="footer-left">
+  
+          <h3><img src="img/logo_horizontal2.svg" width="auto" height="42" alt="logo-caribean"></h3>
+  
+          <p class="footer-links font-weight-normal">
+            <a href="index.html">Inicio</a>
+            -
+            <a href="servicios.html">Servicios</a>
+            -
+            <a href="propiedades.html">Propiedades</a>
+            -
+            <a href="proyectos.html">Proyectos</a>
+            -
+            <a href="empresa.html#page-top">Empresa</a>
+          </p>
+  
+          <p class="footer-company-name">Caribean Service &copy; 2018</p>
+
+          
+        </div>
+  
+        <div class="footer-center">
+
+            <div class="">
+                <i class="fa fa-map-marker" color="#8f9296"></i>
+                <p><a href="https://goo.gl/maps/exXixGQi9j62">Pie de la Popa - Callejón El Albercón <br> Cra. 21D #29B - 06 | Cartagena - Colombia</a></p>
+              </div>
+      
+              <div class="">
+                <i class="fas fa-phone" color="#8f9296" style="transform: rotate(90deg);"></i>
+                <p><a href="tel:+573012996773">(5)656 50 72 | (5) 656 50 98 | 301 299 6773</a></p>
+              </div>
+      
+              <div class="">
+                <i class="fa fa-envelope" color="#8f9296"></i>
+                <p><a href="mailto:info@caribeanservice.com" style="color: #cfcfcf;">info@caribeanservice.com</a></p>
+              </div>
+      
+        </div>
+  
+        <div class="footer-right">
+  
+           <p class="footer-company-about">
+            <span style="color: #cfcfcf">Acerca de la Compañía</span>
+            Somos una empresa que gira en torno a la gestión integral en el sector inmobiliario y financiero, esforzándonos con ahínco en satisfacer las necesidades de nuestros clientes.
+          </p>
+  
+          <div class="footer-icons ">
+  
+            <a href="https://www.facebook.com/caribeanservice" target="_blank"><i class="fab fa-facebook-f social  _social_"></i></a>
+            <a href="https://twitter.com/@caribeanservice" target="_blank"><i class="fab fa-twitter social _social_"></i></a>
+            <a href="https://www.instagram.com/caribean_service_inmobiliaria/" target="_blank"><i class="fab fa-instagram social _social_"></i></a>
+            <a href="https://co.pinterest.com/caribeanservice/?sender=546272767209675757&invite_code=f6081ddb0314478480dd859ebfb93173" target="_blank"><i class="fab fa-pinterest-p social _social_"></i></a>
+            <a href="https://www.youtube.com/channel/UCHAQxJknOlS-Z3ORB0P8plQ" target="_blank"><i class="fab fa-youtube social _social_"></i></a>
+            <a href="mailto:info@caribeanservice.com"><i class="fas fa-envelope social"></i></a>
+           
+            <style>
+              .social:hover{
+                transition: 0.3s;
+                color: #eeeeee;
+
+              }
+              .social{
+                transition: 0.3s;
+                color: #ffffff;
+              }
+             
+            </style>
+
+          </div>
+  
+        </div>
+      </div>
+      </footer>
+
+    <div class="py-4" style="color: #e1e1e1; background-color: #00335a;">
+      <div class="container">
+          <footer class=""> 
+          <p class="text-center"> Web Site by <a class="" target="_blank" href="https://www.lavelsoft.com" style="color: #e1e1e1;"> Lavel Soft </a><span class="font-weight-light">Copyright &copy; 2018</span> </p>
+          </footer>
+        </div>
+    </div>
+      
+
+    <!-- Bootstrap core JavaScript -->
+  
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+<script>
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+$(function () { 
+
+
+
+$.ajax({
+url:"Request/VerProyecto.php",
+type:"post",
+dataType:"json",
+data:{idToken:getParameterByName("token")}
+
+}).done(function (data) { 
+  console.log(data);
+$("#fecha_envio").text(data.fecha_envio);
+$("#tipo_negocio").text(data.tipo_negocio);
+$("#nombre_propietario").text(data.nombre_propietario);
+$("#direccion_propietario").text(data.direccion_propietario);
+$("#telefono_propietario").text(data.telefono_propietario);
+$("#celular_propietario").text(data.celular_propietario);
+$("#correo_propietario").text(data.correo_propietario);
+$("#estado_del_inmueble").text(data.estado_del_inmueble);
+$("#tipo_inmueble").text(data.tipo_inmueble);
+$("#destinacion_inmueble").text(data.destinacion_inmueble);
+$("#direccion_inmueble").text(data.direccion_inmueble);
+$("#edificio_inmueble").text(data.edificio_inmueble);
+$("#punto_referencia_inmueble").text(data.punto_referencia_inmueble);
+$("#area_inmueble").text(data.area_inmueble);
+$("#nombre_administrador").text(data.nombre_administrador);
+$("#telefono_administrador").text(data.telefono_administrador);
+$("#estrato_inmueble").text(data.estrato_inmueble);
+$("#acobas").text(data.alcobas);
+$("#banos").text(data.banos);
+$("#sala").text(data.sala);
+$("#comedor").text(data.comedor);
+$("#cocina").text(data.cocina);
+$("#area_labores").text(data.area_labores);
+$("#habitacion_servicio").text(data.habitacion_servicio);
+$("#bano_servicio").text(data.bano_servicio);
+$("#balcon").text(data.balcon);
+$("#patio").text(data.patio);
+$("#terraza").text(data.terraza);
+$("#estudio").text(data.estudio);
+$("#stars").text(data.stars);
+$("#mezanine").text(data.mezanine);
+$("#minisplit").text(data.minisplit);
+$("#citofono").text(data.citofono);
+$("#garaje").text(data.garaje);
+$("#otras_amenidades").text(data.otras_amenidades);
+$("#ascensor").text(data.ascensor);
+$("#gimnasio").text(data.gimnasio);
+$("#sauna").text(data.sauna);
+$("#turco").text(data.turco);
+$("#zona_parques").text(data.zona_parques);
+$("#zona_juegos").text(data.zona_juegos);
+$("#porteria").text(data.porteria);
+$("#salon_social").text(data.salon_social);
+$("#piscina").text(data.piscina);
+$("#jacuzzi").text(data.jacuzzi);
+$("#tanque_reserva").text(data.tanque_reserva);
+$("#parqueadero_visitas").text(data.parqueadero_visitas);
+$("#planta_electrica").text(data.planta_electrica);
+$("#bbq").text(data.bbq);
+$("#circuito_tv").text(data.circuito_tv);
+$("#otras_amenidades_2").text(data.otras_amenidades_2);
+$("#precio_venta").text(data.precio_venta);
+$("#precio_negociable_venta").text(data.precio_negocible_venta);
+$("#nombre_contacto_venta").text(data.nombre_contacto_venta);
+$("#telefono_contacto_venta").text(data.telefono_contacto_venta);
+$("#precio_arriendo").text(data.precio_arriendo);
+$("#precio_negociable_arriendo").text(data.precio_negociable_arriendo);
+$("#nombre_contacto_arriendo").text(data.nombre_contacto_arriendo);
+$("#telefono_contacto_arriendo").text(data.telefono_contacto_arriendo);
+
+
+
+
+ }).fail(function (error) { 
+   alert("error al obtener los datos por favor recarge la pagina");
+
+ });
+
+
+
+
+
+
+
+
+
+ });
+
+
+
+</script>
+
+
+     
+  </body>
+
+</html>
+

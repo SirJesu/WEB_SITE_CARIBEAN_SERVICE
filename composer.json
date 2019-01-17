@@ -1,0 +1,8 @@
+{
+    "name": "furiad/public_html",
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "~6.0",
+        "slim/pdo": "dev-master"
+    }
+}
