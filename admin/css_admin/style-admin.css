@@ -1,0 +1,21 @@
+body{
+	 transition: 3s;
+     background-image: url("../../img/mapa.jpg") !important;
+}
+
+.cuadro{
+	margin-top: 10%;
+}
+
+.logo{
+	max-width: 50%;
+	height: auto;
+}
+
+@media (max-width: 575.98px) { 
+	.cuadro{
+	margin-top: 30%;
+	}
+
+ }
+
